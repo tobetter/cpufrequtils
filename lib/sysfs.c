@@ -580,6 +580,7 @@ int sysfs_set_policy(unsigned int cpu, struct cpufreq_policy *policy)
 	int ret;
 	unsigned long old_min;
 	int write_max_first;
+	unsigned long nmin, nmax;
 
 	if (!policy || !(policy->governor))
 		return -EINVAL;
@@ -589,6 +590,16 @@ int sysfs_set_policy(unsigned int cpu, struct cpufreq_policy *policy)
 
 	if (verify_gov(gov, policy->governor))
 		return -EINVAL;
+
+	ret = sysfs_get_hardware_limits(cpu, &nmin, &nmax);
+	if (ret)
+		return ret;
+
+	if (!policy->min)
+		policy->min = nmin;
+
+	if (!policy->max)
+		policy->max = nmax;
 
 	snprintf(min, SYSFS_PATH_MAX, "%lu", policy->min);
 	snprintf(max, SYSFS_PATH_MAX, "%lu", policy->max);

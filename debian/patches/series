@@ -9,3 +9,4 @@
 0008-cpufrequtils-make-NLS-optional.patch
 10_build_static_lib.patch
 11_dont_touch_po_files.patch
+12_fix_typo_in_man.patch

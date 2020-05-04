@@ -1,4 +1,5 @@
 libcpufreq.so.0 libcpufreq0 #MINVER#
+* Build-Depends-Package: libcpufreq-dev
  cpufreq_cpu_exists@Base 001
  cpufreq_get_affected_cpus@Base 001
  cpufreq_get_available_frequencies@Base 001

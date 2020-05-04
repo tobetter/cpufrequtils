@@ -19,3 +19,5 @@ po/*.gmo
 utils/cpufreq-info.o
 utils/cpufreq-set.o
 utils/cpufreq-aperf.o
+*.swp
+.pc/*

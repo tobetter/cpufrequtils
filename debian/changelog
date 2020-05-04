@@ -1,3 +1,22 @@
+cpufrequtils (008-2) unstable; urgency=medium
+
+  * New maintainer (Closes: #933159)
+  * Add "for internal use" to debian/cpufrequtils.templates to fix
+    lintian warning.
+  * Bump Standards-Version to 4.5.0.
+  * Bump debhelper compat to 13.
+  * Remove -O2 CFLAGS from debian/rules when noopt is defined.
+  * Add hardening+=all to debian/rules and set-hardening.patch.
+  * Add Vcs-* fields to debian/control.
+  * Remove hurd, kbsd64, and kbsd32 from debian/control.
+  * Add Build-Depends-Package field to debian/libcpufreq0.symbols.
+  * Change the format of debian/copyright to dep5.
+  * Fix typos in man files.
+  * Remove debian/source.lintian-overrides to fix lintian warning.
+  * Change to the secure URL in debian/watch.
+
+ -- Seunghun Han <kkamagui@gmail.com>  Mon, 04 May 2020 12:20:06 +0900
+
 cpufrequtils (008-1.1) unstable; urgency=medium
 
   * Non-maintainer upload.
